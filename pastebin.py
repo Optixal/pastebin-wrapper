@@ -19,15 +19,15 @@ PASTEBIN_USER_PASSWORD = ''
 def paste(paste_code, dev_key=PASTEBIN_DEV_KEY, user_key='', option='paste', paste_private=0, paste_name='', paste_expire_date='N', paste_format='text'):
 
     data = {
-            'api_dev_key'           : os.getenv('PASTEBIN_DEV_KEY', dev_key),
-            'api_user_key'          : user_key,
-            'api_option'            : option,
-            'api_paste_private'     : str(paste_private),
-            'api_paste_name'        : paste_name,
-            'api_paste_expire_date' : paste_expire_date,
-            'api_paste_format'      : paste_format,
-            'api_paste_code'        : paste_code,
-            }
+        'api_dev_key'           : os.getenv('PASTEBIN_DEV_KEY', dev_key),
+        'api_user_key'          : user_key,
+        'api_option'            : option,
+        'api_paste_private'     : str(paste_private),
+        'api_paste_name'        : paste_name,
+        'api_paste_expire_date' : paste_expire_date,
+        'api_paste_format'      : paste_format,
+        'api_paste_code'        : paste_code,
+    }
 
     url = 'https://pastebin.com/api/api_post.php'
     r = requests.post(url, data=data)
